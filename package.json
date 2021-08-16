@@ -17,6 +17,8 @@
   "author": "Nikita Glukhi <glukhi.nikita@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.4.0"
+    "@actions/core": "^1.4.0",
+    "@actions/exec": "^1.1.0",
+    "tmp": "^0.2.1"
   }
 }

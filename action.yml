@@ -1,0 +1,28 @@
+name: "Firebase channels clone"
+description: "This is the simple action, that allow you clone channels throw Firebase projects"
+branding:
+  icon: "book-open"
+  color: "green"
+inputs:
+  entry_point:
+    description: "The location of your firebase.json file relative to the root of your repository. Defaults to . (the root of your repo)"
+    required: false
+    default: "."
+  project_id:
+    description: "The Firebase project that contains the Hosting site to which you want to clone"
+    required: true
+  channel_id:
+    description: "The ID of the channel that you want to clone"
+    required: true
+  target_project_id:
+    description: "The Firebase project that contains the Hosting site where want to clone your channel"
+    required: true
+  target_channel_id:
+    description: "The ID of the channel where you want to clone your channel"
+    required: true
+  firebase_service_account:
+    description: "This is a service account JSON key"
+    required: true
+runs:
+  using: "node12"
+  main: "index.js"
