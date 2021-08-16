@@ -1,0 +1,22 @@
+{
+  "name": "firebase-clone-channels",
+  "version": "1.0.0",
+  "description": "This is the simple action, that allow you clone channels throw Firebase projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "keywords": [
+    "firebase",
+    "actions",
+    "githib",
+    "channels",
+    "clone",
+    "cloning"
+  ],
+  "author": "Nikita Glukhi <glukhi.nikita@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.4.0"
+  }
+}
