@@ -17,6 +17,7 @@ export async function cloneChannel(gacFilename: string, params: CloneParams) {
         'hosting:clone',
         ...[projectId, ':', channelId],
         ...[targetProjectId, ':', targetChannelId],
+        '--json',
       ],
       {
         env: {
