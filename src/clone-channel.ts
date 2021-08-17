@@ -21,6 +21,7 @@ export async function cloneChannel(gacFilename: string, params: CloneParams) {
       {
         env: {
           ...process.env,
+          FIREBASE_DEPLOY_AGENT: "action-hosting-deploy",
           GOOGLE_APPLICATION_CREDENTIALS: gacFilename,
         },
       }
