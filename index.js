@@ -35,7 +35,9 @@ async function run() {
             }
         )
 
-    } catch (err) {}
+    } catch (err) {
+        throw new Error(err);
+    }
 }
 
 run();
