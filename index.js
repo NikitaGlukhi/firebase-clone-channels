@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const { exec } = require('@actions/exec');
 const { fileSync } = require('tmp');
-const { writeSync, existsSync } = require('fs');
+const { writeSync } = require('fs');
 
 const firebase = {
     entryPoint: core.getInput('entry_point', { required: false }),
@@ -20,26 +20,6 @@ async function createGacFile(firebaseServiceAccount) {
 
 async function run() {
     try {
-        core.startGroup('Verifying firebase.json exists');
-
-        if (firebase.entryPoint !== '.') {
-            console.log(`Changing to directory: ${firebase.entryPoint}`);
-
-            try {
-                process.chdir(firebase.entryPoint);
-            } catch (err) {
-                throw Error(`Error changing to directory ${firebase.entryPoint}: ${err}`);
-            }
-        }
-
-        if (existsSync('./firebase.json')) {
-            console.log('firebase.json file found. Continuing deploy.');
-        } else {
-            throw Error("firebase.json file not found. If your firebase.json file is not in the root of your repo, edit the entryPoint option of this GitHub action.");
-        }
-
-        core.endGroup();
-
         core.startGroup("Setting up CLI credentials");
         const gacFilename = await createGacFile(firebase.googleApplicationCredentials);
         console.log("Created a temporary file with Application Default Credentials.");
