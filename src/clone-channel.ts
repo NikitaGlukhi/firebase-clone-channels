@@ -14,7 +14,9 @@ export async function cloneChannel(gacFilename: string, params: CloneParams) {
     await exec(
       "npx firebase-tools",
       [
-        `hosting:clone ${projectId}:${channelId} ${targetProjectId}:${targetChannelId}`,
+        'hosting:clone',
+        ...[projectId, ':', channelId],
+        ...[targetProjectId, ':', targetChannelId],
       ],
       {
         env: {
