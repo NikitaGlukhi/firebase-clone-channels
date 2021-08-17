@@ -1,3 +1,6 @@
 **/.DS_Store
 .idea
 *.ignore
+
+**/*.d.ts
+node_modules
