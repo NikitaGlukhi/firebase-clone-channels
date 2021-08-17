@@ -2,9 +2,12 @@
   "name": "firebase-clone-channels",
   "version": "1.0.0",
   "description": "This is the simple action, that allow you clone channels throw Firebase projects",
-  "main": "index.js",
+  "main": "bin/action.min.js",
+  "source": "src/index.ts",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "build:microbundle": "microbundle --format cjs --target node --no-compress --no-sourcemap src/index.ts",
+    "build": "pretty-quick --staged && npm run build:microbundle"
   },
   "keywords": [
     "firebase",
@@ -16,9 +19,24 @@
   ],
   "author": "Nikita Glukhi <glukhi.nikita@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "@actions/core": "^1.4.0",
-    "@actions/exec": "^1.1.0",
-    "tmp": "^0.2.1"
+  "devDependencies": {
+    "@actions/core": "1.4.0",
+    "@actions/exec": "1.1.0",
+    "@babel/core": "7.15.0",
+    "@babel/preset-env": "7.15.0",
+    "@babel/preset-typescript": "7.15.0",
+    "@types/node": "16.6.1",
+    "@types/tmp": "0.2.1",
+    "husky": "7.0.1",
+    "microbundle": "0.13.3",
+    "prettier": "2.3.2",
+    "pretty-quick": "3.1.1",
+    "tmp": "0.2.1",
+    "typescript": "4.3.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
   }
 }
