@@ -1,6 +1,7 @@
 import { getInput, startGroup, endGroup, setFailed } from "@actions/core";
 import { createGacFile } from "./create-gac-file";
 import { cloneChannel } from "./clone-channel";
+import { installFirebaseTools } from './install-firebase-tools';
 
 const projectId = getInput("project_id", { required: true });
 const channelId = getInput("channel_id", { required: true });
@@ -17,6 +18,10 @@ async function run() {
     console.log(
       "Created a temporary file with Application Default Credentials."
     );
+    endGroup();
+
+    startGroup('Install firebase-tools');
+    installFirebaseTools();
     endGroup();
 
     startGroup(
