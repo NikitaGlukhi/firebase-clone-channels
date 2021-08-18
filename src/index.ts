@@ -21,7 +21,7 @@ async function run() {
     endGroup();
 
     startGroup('Install firebase-tools');
-    installFirebaseTools();
+    await installFirebaseTools();
     endGroup();
 
     startGroup(
