@@ -20,5 +20,5 @@ inputs:
     description: "This is a service account JSON key"
     required: true
 runs:
-  using: "node12"
+  using: "node16"
   main: "bin/action.min.js"
