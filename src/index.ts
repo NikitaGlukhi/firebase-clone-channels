@@ -1,26 +1,26 @@
-import { getInput, startGroup, endGroup, setFailed } from "@actions/core";
-import { createGacFile } from "./create-gac-file";
-import { cloneChannel } from "./clone-channel";
-import { installFirebaseTools } from "./install-firebase-tools";
+import { getInput, startGroup, endGroup, setFailed } from '@actions/core';
+import { createGacFile } from './create-gac-file';
+import { cloneChannel } from './clone-channel';
+import { installFirebaseTools } from './install-firebase-tools';
 
-const projectId = getInput("project_id", { required: true });
-const channelId = getInput("channel_id", { required: true });
-const targetProjectId = getInput("target_project_id", { required: true });
-const targetChannelId = getInput("target_channel_id", { required: true });
-const googleApplicationCredentials = getInput("firebase_service_account", {
+const projectId = getInput('project_id', { required: true });
+const channelId = getInput('channel_id', { required: true });
+const targetProjectId = getInput('target_project_id', { required: true });
+const targetChannelId = getInput('target_channel_id', { required: true });
+const googleApplicationCredentials = getInput('firebase_service_account', {
   required: true,
 });
 
 async function run() {
   try {
-    startGroup("Setting CLI credentials");
+    startGroup('Setting CLI credentials');
     const gacFilename = await createGacFile(googleApplicationCredentials);
     console.log(
-      "Created a temporary file with Application Default Credentials."
+      'Created a temporary file with Application Default Credentials.'
     );
     endGroup();
 
-    startGroup("Install firebase-tools");
+    startGroup('Install firebase-tools');
     await installFirebaseTools();
     endGroup();
 

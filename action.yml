@@ -1,5 +1,6 @@
 name: "Firebase channels clone"
 description: "This is the simple action, that allow you clone channels throw Firebase projects"
+author: "Nikita Glukhi <glukhi.nikita@gmail.com>"
 branding:
   icon: "book-open"
   color: "green"
@@ -20,5 +21,5 @@ inputs:
     description: "This is a service account JSON key"
     required: true
 runs:
-  using: "node12"
+  using: "node16"
   main: "bin/action.min.js"

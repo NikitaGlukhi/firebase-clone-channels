@@ -1,4 +1,4 @@
-import { exec } from "@actions/exec";
+import { exec } from '@actions/exec';
 
 interface CloneParams {
   projectId: string;
@@ -12,7 +12,7 @@ export async function cloneChannel(gacFilename: string, params: CloneParams) {
 
   try {
     await exec(
-      "firebase",
+      'firebase',
       [
         'hosting:clone',
         `${projectId}:${channelId}`,
