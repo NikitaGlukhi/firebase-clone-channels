@@ -20,6 +20,9 @@ inputs:
   firebase_service_account:
     description: "This is a service account JSON key"
     required: true
+  firebase_tools_version:
+    description: "The version of 'firebase-tools'. If not specified, defaults to 'latest'"
+    required: false
 runs:
   using: "node16"
   main: "bin/action.min.js"

@@ -10,6 +10,7 @@ const targetChannelId = getInput('target_channel_id', { required: true });
 const googleApplicationCredentials = getInput('firebase_service_account', {
   required: true,
 });
+const firebaseToolsVersion = getInput('firebase_tools_version', { required: false });
 
 async function run() {
   try {
@@ -21,7 +22,7 @@ async function run() {
     endGroup();
 
     startGroup('Install firebase-tools');
-    await installFirebaseTools();
+    await installFirebaseTools(firebaseToolsVersion);
     endGroup();
 
     startGroup(

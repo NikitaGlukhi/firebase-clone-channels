@@ -7,7 +7,7 @@ interface CloneParams {
   targetChannelId: string;
 }
 
-export async function cloneChannel(gacFilename: string, params: CloneParams) {
+export async function cloneChannel(gacFilename: string, params: CloneParams): Promise<void> {
   const { projectId, channelId, targetProjectId, targetChannelId } = params;
 
   try {
