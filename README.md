@@ -9,6 +9,7 @@ This is the simple action, that allow you clone channels throw Firebase projects
 - `target_project_id` **(required)** - The Firebase project that contains the Hosting site where want to clone your channel.
 - `target_channel_id` **(required)** - The ID of the channel where you want to clone your channel.
 - `firebase_service_account` **(required)** - This is a service account JSON key.
+- `firebase_tools_version` **(optional)** - The version of `firebase-tools`. If not specified, defaults to `latest`
 
 ## How to get Firebase service account JSON key
 
