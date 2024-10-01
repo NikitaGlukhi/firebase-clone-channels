@@ -1,6 +1,6 @@
 {
   "name": "firebase-clone-channels",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "This is the simple action, that allow you clone channels throw Firebase projects",
   "main": "bin/action.min.js",
   "source": "src/index.ts",
