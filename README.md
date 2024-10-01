@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to prod
-        uses: NikitaGlukhi/firebase-clone-channels@v1
+        uses: NikitaGlukhi/firebase-clone-channels@v2
         with:
           firebase_service_account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           project_id: example-project
@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to prod
-        uses: NikitaGlukhi/firebase-clone-channels@v1
+        uses: NikitaGlukhi/firebase-clone-channels@v2
         with:
           firebase_service_account: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           project_id: example-project-id

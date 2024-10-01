@@ -24,5 +24,5 @@ inputs:
     description: "The version of 'firebase-tools'. If not specified, defaults to 'latest'"
     required: false
 runs:
-  using: "node16"
+  using: "node20"
   main: "bin/action.min.js"
